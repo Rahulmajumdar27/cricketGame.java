@@ -35,64 +35,72 @@ public class Main
     System.out.println ("Your Target Is " + target + " and Your Have " +
 			wicket + " Wickets" + " and " + overs +
 			" Overs lefts");
-    System.out.
-      println ("------LESS PADUP AND READY FOR BATTING AND ENTER 1------");
+    System.
+      out.println
+      ("------LESS PADUP AND READY FOR BATTING AND ENTER 1------");
     int hit = inp.nextInt ();
     overs = overs * 6;
     if (hit == 1)
       {
-	System.out.print ("\033[H\033[2J");
-	System.out.print ("BOLWER DELIVER THE BALL (0)HIT : ");
-	int dev = inp.nextInt ();
-	int run = random.nextInt (7);
-	int runs =0;
-	if (run == 0)
+	while (overs != 0)
 	  {
-	    System.out.println ("Ooo No Its Out (0)");
-	    wicket = wicket - 1;
-	    System.out.println("Runs = "+runs+"Wickets = "+wicket);
-	  }
-	else if (run == 1)
-	  {
-	    System.out.println ("Its A Single : One Run(1)");
-	    runs = runs + 1;
-	    System.out.println("Runs = "+runs+"Wickets = "+wicket);
-	  }
-	else if (run == 2)
-	  {
-	      runs = runs + 2; 
-	    System.out.println ("Good Runing Between (2)");
-	    System.out.println("Runs = "+runs+"Wickets = "+wicket);
-	  }
-	else if (run == 3)
-	  {
-	      runs = runs + 3;
-	    System.out.println ("Wow its Three Run Add To Total");
-	    System.out.println("Runs = "+runs+"Wickets = "+wicket);
-	  }
-	else if (run == 4)
-	  {
-	      runs = runs + 4;
-	    System.out.println ("Class Of Batsman Its a Four (4)");
-	    System.out.println("Runs = "+runs+" Wickets lefts = "+wicket);
-	  }
-	else if (run == 5)
-	  {
-	     runs = runs + 1;
-	    System.out.println ("No No.... Wide Bad Ball (1)");
-	    System.out.println("Runs = "+runs+"Wickets = "+wicket);
-	  }
-	else if (run == 6)
-	  {
-	      runs = runs + 6;
-	    System.out.println ("Its A Big One What A Shot SIX!! (6)");
-	    System.out.println("Runs = "+runs+"Wickets = "+wicket);
+	    overs = overs - 1;
+	    //System.out.print ("\033[H\033[2J");
+	    System.out.print ("BOLWER DELIVER THE BALL (0)HIT : ");
+	    int dev = inp.nextInt ();
+	    int run = random.nextInt (7);
+	    int runs = 0;
+	    if (run == 0)
+	      {
+		System.out.println ("Ooo No Its Out (0)");
+		wicket = wicket - 1;
+		System.out.println ("Runs = " + runs + "Wickets = " + wicket);
+	      }
+	    else if (run == 1)
+	      {
+		System.out.println ("Its A Single : One Run(1)");
+		runs = runs + 1;
+		System.out.println ("Runs = " + runs + "Wickets = " + wicket);
+	      }
+	    else if (run == 2)
+	      {
+		runs = runs + 2;
+		System.out.println ("Good Runing Between (2)");
+		System.out.println ("Runs = " + runs + "Wickets = " + wicket);
+	      }
+	    else if (run == 3)
+	      {
+		runs = runs + 3;
+		System.out.println ("Wow its Three Run Add To Total");
+		System.out.println ("Runs = " + runs + "Wickets = " + wicket);
+	      }
+	    else if (run == 4)
+	      {
+		runs = runs + 4;
+		System.out.println ("Class Of Batsman Its a Four (4)");
+		System.out.println ("Runs = " + runs + " Wickets lefts = " +
+				    wicket);
+	      }
+	    else if (run == 5)
+	      {
+		runs = runs + 1;
+		System.out.println ("No No.... Wide Bad Ball (1)");
+		System.out.println ("Runs = " + runs + "Wickets = " + wicket);
+	      }
+	    else if (run == 6)
+	      {
+		runs = runs + 6;
+		System.out.println ("Its A Big One What A Shot SIX!! (6)");
+		System.out.println ("Runs = " + runs + "Wickets = " + wicket);
+	      }
 	  }
       }
     else
       {
 	System.out.println ("WRONG INPUT :(");
       }
+
+
 
 
   }
