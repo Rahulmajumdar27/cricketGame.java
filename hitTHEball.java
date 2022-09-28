@@ -27,7 +27,7 @@ public class Main
   public static void bat (int target, int wicket, int overs)
   {
       System.out.print ("\033[H\033[2J");
-      System.out.println("YOUR TARGET IS "+target+" AND YOU HAVE "+wicket);
+      System.out.println("YOUR TARGET IS "+target+" AND YOU HAVE "+wicket+"WICKETS");
       int totalrun=0;
       overs=overs*6;
       while(overs!=0){
@@ -45,7 +45,9 @@ public class Main
           else if(run==6){totalrun=totalrun+6;System.out.println("WOW PERFECT SHOT WITH FULL POWER SIX!! (6)");}
           else if(run==0){wicket=wicket-1;System.out.println("VERY GOOD BALL BY BOLWER AND WICKET DOWN (WICKET)");}
           else if(run==7){totalrun=totalrun+0;System.out.println("GOOD FIELDING BY THE FILDER DOT BALL (0)");}
-          System.out.println(totalrun);
+          System.out.println("RUN = "+totalrun+" wicket = "+wicket+" BALL LEFT = "+overs);
+          if(totalrun==target){System.out.println("GOOD BATTING : YOY WIN THE MATCH YOU HIT "+totalrun+"("+overs+")");}
+          if(wicket==0){System.out.println("OO NO! ALL OUT THE TEAM : BATTER LUCK NEXT TIME");}
       }
   }
 
@@ -58,7 +60,7 @@ public class Main
       {
 	System.out.print ("\033[H\033[2J");
 	int target, wicket, overs;
-	target = random.nextInt (240) + 100;
+	target = random.nextInt (100) + 50;
 	System.out.print ("Enter The Wickets : ");
 	wicket = inp.nextInt ();
 	System.out.print ("Enter The Overs : ");
