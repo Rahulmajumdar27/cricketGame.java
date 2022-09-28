@@ -26,86 +26,28 @@ public class Main
 
   public static void bat (int target, int wicket, int overs)
   {
-
-  }
-
-  public static void play (int target, int wicket, int overs)
-  {
-    System.out.print ("\033[H\033[2J");
-    System.out.println ("Your Target Is " + target + " and Your Have " +
-			wicket + " Wickets" + " and " + overs +
-			" Overs lefts");
-    System.
-      out.println
-      ("------LESS PADUP AND READY FOR BATTING AND ENTER 1------");
-    int hit = inp.nextInt ();
-    overs = overs * 6;
-    if (hit == 1)
-      {
-	while (overs != 0)
-	  {
-	    overs = overs - 1;
-	    //System.out.print ("\033[H\033[2J");
-	    System.out.print ("BOLWER DELIVER THE BALL (0)HIT : ");
-	    int dev = inp.nextInt ();
-	    int run = random.nextInt (7);
-	    int runs = 0;
-	    if (run == 0)
-	      {
-		System.out.println ("Ooo No Its Out (0)");
-		wicket = wicket - 1;
-		System.out.println ("Runs = " + runs + "Wickets = " + wicket);
-	      }
-	    else if (run == 1)
-	      {
-		System.out.println ("Its A Single : One Run(1)");
-		runs = runs + 1;
-		System.out.println ("Runs = " + runs + "Wickets = " + wicket);
-	      }
-	    else if (run == 2)
-	      {
-		runs = runs + 2;
-		System.out.println ("Good Runing Between (2)");
-		System.out.println ("Runs = " + runs + "Wickets = " + wicket);
-	      }
-	    else if (run == 3)
-	      {
-		runs = runs + 3;
-		System.out.println ("Wow its Three Run Add To Total");
-		System.out.println ("Runs = " + runs + "Wickets = " + wicket);
-	      }
-	    else if (run == 4)
-	      {
-		runs = runs + 4;
-		System.out.println ("Class Of Batsman Its a Four (4)");
-		System.out.println ("Runs = " + runs + " Wickets lefts = " +
-				    wicket);
-	      }
-	    else if (run == 5)
-	      {
-		runs = runs + 1;
-		System.out.println ("No No.... Wide Bad Ball (1)");
-		System.out.println ("Runs = " + runs + "Wickets = " + wicket);
-	      }
-	    else if (run == 6)
-	      {
-		runs = runs + 6;
-		System.out.println ("Its A Big One What A Shot SIX!! (6)");
-		System.out.println ("Runs = " + runs + "Wickets = " + wicket);
-	      }
-	  }
+      System.out.print ("\033[H\033[2J");
+      System.out.println("YOUR TARGET IS "+target+" AND YOU HAVE "+wicket);
+      int totalrun=0;
+      overs=overs*6;
+      while(overs!=0){
+          int run=random.nextInt(8);
+          
+          System.out.print("BOLWER DELIVER THE BALL (ANY NUMBER KEY)FOR HIT : ");
+          int hit=inp.nextInt();
+          System.out.print ("\033[H\033[2J");
+          overs--;
+          if(run==1){totalrun=totalrun+1;System.out.println("ITS A ONLY A SINGLE (1)");}
+          else if(run==2){totalrun=totalrun+2;System.out.println("GOOD RUNING BETWEEN BY THE BATSMEN (2)");}
+          else if(run==3){totalrun=totalrun+3;System.out.println("BATSMEN HIT IN GAP AND ITS THREE RUNS (3)");}
+          else if(run==4){totalrun=totalrun+4;System.out.println("WHAT A CLASS FORM THE BATSMEN FOUR RUNS (4)");}
+          else if(run==5){totalrun=totalrun+1;System.out.println("BAD BALL FORM BOLWER WIDE BALL (1)");}
+          else if(run==6){totalrun=totalrun+6;System.out.println("WOW PERFECT SHOT WITH FULL POWER SIX!! (6)");}
+          else if(run==0){wicket=wicket-1;System.out.println("VERY GOOD BALL BY BOLWER AND WICKET DOWN (WICKET)");}
+          else if(run==7){totalrun=totalrun+0;System.out.println("GOOD FIELDING BY THE FILDER DOT BALL (0)");}
+          System.out.println(totalrun);
       }
-    else
-      {
-	System.out.println ("WRONG INPUT :(");
-      }
-
-
-
-
   }
-
-
 
 
   public static void main (String[]args)
@@ -121,7 +63,7 @@ public class Main
 	wicket = inp.nextInt ();
 	System.out.print ("Enter The Overs : ");
 	overs = inp.nextInt ();
-	play (target, wicket, overs);
+    bat(target, wicket, overs);
       }
     else
       {
